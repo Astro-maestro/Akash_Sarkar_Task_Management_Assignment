@@ -1,0 +1,206 @@
+2024-12-08T05:38:20.690Z [32minfo[39m: Server started successfully
+2024-12-08T05:44:45.508Z [31merror[39m: An error occurred while processing the request
+2024-12-08T07:30:25.566Z [32minfo[39m: Server started successfully
+2024-12-08T07:30:42.333Z [32minfo[39m: Incoming request: GET /api/docs
+2024-12-08T07:30:51.153Z [32minfo[39m: Incoming request: GET /docs
+2024-12-08T07:30:51.173Z [32minfo[39m: Incoming request: GET /docs/
+2024-12-08T07:30:51.232Z [32minfo[39m: Incoming request: GET /docs/swagger-ui.css
+2024-12-08T07:30:51.246Z [32minfo[39m: Incoming request: GET /docs/swagger-ui-bundle.js
+2024-12-08T07:30:51.252Z [32minfo[39m: Incoming request: GET /docs/swagger-ui-standalone-preset.js
+2024-12-08T07:30:51.255Z [32minfo[39m: Incoming request: GET /docs/swagger-ui-init.js
+2024-12-08T07:30:51.726Z [32minfo[39m: Incoming request: GET /docs/favicon-32x32.png
+2024-12-08T07:32:43.696Z [32minfo[39m: Server started successfully
+2024-12-08T07:32:54.358Z [32minfo[39m: Server started successfully
+2024-12-08T07:33:30.498Z [32minfo[39m: Server started successfully
+2024-12-08T07:33:33.301Z [32minfo[39m: Server started successfully
+2024-12-08T07:34:12.596Z [32minfo[39m: Server started successfully
+2024-12-08T07:34:22.240Z [32minfo[39m: Server started successfully
+2024-12-08T07:34:24.638Z [32minfo[39m: Server started successfully
+2024-12-08T07:34:27.471Z [32minfo[39m: Incoming request: GET /docs/
+2024-12-08T07:34:27.523Z [32minfo[39m: Incoming request: GET /docs/swagger-ui.css
+2024-12-08T07:34:27.527Z [32minfo[39m: Incoming request: GET /docs/swagger-ui-bundle.js
+2024-12-08T07:34:27.529Z [32minfo[39m: Incoming request: GET /docs/swagger-ui-standalone-preset.js
+2024-12-08T07:34:27.531Z [32minfo[39m: Incoming request: GET /docs/swagger-ui-init.js
+2024-12-08T07:34:28.228Z [32minfo[39m: Incoming request: GET /docs/favicon-32x32.png
+2024-12-08T07:35:41.948Z [32minfo[39m: Incoming request: POST /api/register
+2024-12-08T07:36:23.895Z [32minfo[39m: Incoming request: POST /api/login
+2024-12-08T07:37:31.515Z [32minfo[39m: Incoming request: GET /api/dashboard
+2024-12-08T07:39:03.843Z [32minfo[39m: Server started successfully
+2024-12-08T08:10:00.529Z [32minfo[39m: Server started successfully
+2024-12-08T08:10:33.818Z [32minfo[39m: Incoming request: GET /api-docs/
+2024-12-08T08:10:33.930Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui.css
+2024-12-08T08:10:33.932Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-bundle.js
+2024-12-08T08:10:33.933Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-standalone-preset.js
+2024-12-08T08:10:33.936Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-init.js
+2024-12-08T08:11:34.949Z [32minfo[39m: Incoming request: GET /api/dashboard
+2024-12-08T08:12:22.449Z [32minfo[39m: Incoming request: POST /api/tasks
+2024-12-08T08:12:22.459Z [31merror[39m: Failed to create task: Failed to Create Task"isDeleted" is not allowed
+2024-12-08T08:15:03.882Z [32minfo[39m: Server started successfully
+2024-12-08T08:15:10.994Z [32minfo[39m: Incoming request: POST /api/tasks
+2024-12-08T08:15:11.000Z [31merror[39m: Failed to create task: Failed to Create TaskThe isDeleted field is managed by the system and cannot be set manually.
+2024-12-08T08:15:43.150Z [32minfo[39m: Incoming request: POST /api/tasks
+2024-12-08T08:15:43.156Z [31merror[39m: Failed to create task: Failed to Create TaskThe isDeleted field is managed by the system and cannot be set manually.
+2024-12-08T08:17:17.793Z [32minfo[39m: Server started successfully
+2024-12-08T08:17:37.592Z [32minfo[39m: Incoming request: POST /api/tasks
+2024-12-08T08:17:37.608Z [31merror[39m: Failed to create task: Failed to Create TaskThe deletedAt field is managed by the system and cannot be set manually.
+2024-12-08T08:18:19.470Z [32minfo[39m: Server started successfully
+2024-12-08T08:18:27.773Z [32minfo[39m: Incoming request: POST /api/tasks
+2024-12-08T08:18:27.786Z [31merror[39m: Failed to create task: Failed to Create TaskdeletedAt must be a valid date.
+2024-12-08T08:18:55.964Z [32minfo[39m: Server started successfully
+2024-12-08T08:19:20.648Z [32minfo[39m: Incoming request: POST /api/tasks
+2024-12-08T08:19:20.673Z [31merror[39m: Failed to create task: Failed to Create Task"deletedAt" must be a valid date
+2024-12-08T08:20:08.753Z [32minfo[39m: Incoming request: GET /api-docs/
+2024-12-08T08:20:08.797Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui.css
+2024-12-08T08:20:08.804Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-bundle.js
+2024-12-08T08:20:08.806Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-standalone-preset.js
+2024-12-08T08:20:08.808Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-init.js
+2024-12-08T08:20:09.845Z [32minfo[39m: Incoming request: GET /api-docs/favicon-32x32.png
+2024-12-08T08:20:26.264Z [32minfo[39m: Server started successfully
+2024-12-08T08:20:30.289Z [32minfo[39m: Incoming request: GET /api-docs/
+2024-12-08T08:20:30.341Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui.css
+2024-12-08T08:20:30.345Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-bundle.js
+2024-12-08T08:20:30.346Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-standalone-preset.js
+2024-12-08T08:20:30.348Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-init.js
+2024-12-08T08:20:30.654Z [32minfo[39m: Incoming request: GET /api-docs/favicon-32x32.png
+2024-12-08T08:21:08.214Z [32minfo[39m: Incoming request: POST /api/tasks
+2024-12-08T08:21:08.227Z [31merror[39m: Failed to create task: Failed to Create Task"deletedAt" must be a valid date
+2024-12-08T08:23:44.774Z [32minfo[39m: Server started successfully
+2024-12-08T08:23:50.811Z [32minfo[39m: Server started successfully
+2024-12-08T08:23:57.331Z [32minfo[39m: Incoming request: POST /api/tasks
+2024-12-08T08:23:57.345Z [31merror[39m: Failed to create task: Failed to Create Task"deletedAt" is not allowed
+2024-12-08T08:25:44.007Z [32minfo[39m: Server started successfully
+2024-12-08T08:26:37.577Z [32minfo[39m: Incoming request: POST /api/tasks
+2024-12-08T08:26:37.704Z [32minfo[39m: Task created successfully: 6755583d103643fa28746606
+2024-12-08T08:27:54.339Z [32minfo[39m: Incoming request: GET /api/tasks
+2024-12-08T08:27:54.435Z [32minfo[39m: All tasks fetched
+2024-12-08T08:28:18.475Z [32minfo[39m: Incoming request: GET /api/tasks/6755583d103643fa28746606
+2024-12-08T08:28:18.561Z [32minfo[39m: Task found with id: 6755583d103643fa28746606
+2024-12-08T08:28:48.258Z [32minfo[39m: Incoming request: PUT /api/tasks/6755583d103643fa28746606
+2024-12-08T08:28:48.417Z [32minfo[39m: Task updated with id: 6755583d103643fa28746606
+2024-12-08T08:29:18.760Z [32minfo[39m: Incoming request: GET /api/tasks/active
+2024-12-08T08:29:18.774Z [31merror[39m: Error fetching task by id: Failed to Get TaskCast to ObjectId failed for value "active" (type string) at path "_id" for model "Task"
+2024-12-08T08:29:46.672Z [32minfo[39m: Incoming request: DELETE /api/tasks/6755583d103643fa28746606
+2024-12-08T08:29:46.755Z [32minfo[39m: Task deleted with id: 6755583d103643fa28746606
+2024-12-08T08:31:16.971Z [32minfo[39m: Incoming request: POST /api/tasks
+2024-12-08T08:31:17.198Z [32minfo[39m: Task created successfully: 67555954103643fa2874660c
+2024-12-08T08:31:50.910Z [32minfo[39m: Incoming request: POST /api/tasks
+2024-12-08T08:31:50.985Z [32minfo[39m: Task created successfully: 67555976103643fa2874660e
+2024-12-08T08:32:04.800Z [32minfo[39m: Incoming request: POST /api/tasks
+2024-12-08T08:32:05.216Z [32minfo[39m: Task created successfully: 67555984103643fa28746610
+2024-12-08T08:32:54.474Z [32minfo[39m: Incoming request: PATCH /api/tasks/67555984103643fa28746610/soft-delete
+2024-12-08T08:32:54.563Z [32minfo[39m: Task soft deleted with id: 67555984103643fa28746610
+2024-12-08T08:33:44.192Z [32minfo[39m: Incoming request: GET /api/tasks/active
+2024-12-08T08:33:44.196Z [31merror[39m: Error fetching task by id: Failed to Get TaskCast to ObjectId failed for value "active" (type string) at path "_id" for model "Task"
+2024-12-08T08:35:31.974Z [32minfo[39m: Server started successfully
+2024-12-08T08:36:02.024Z [32minfo[39m: Server started successfully
+2024-12-08T08:36:31.539Z [32minfo[39m: Incoming request: GET /api/tasks/active
+2024-12-08T08:36:31.564Z [31merror[39m: Error fetching task by id: Failed to Get TaskCast to ObjectId failed for value "active" (type string) at path "_id" for model "Task"
+2024-12-08T08:41:33.160Z [32minfo[39m: Incoming request: GET /api/tasks/filter?status=TODO&priority=LOW&order=asc&limit=1&page=1
+2024-12-08T08:41:33.166Z [31merror[39m: Error fetching task by id: Failed to Get TaskCast to ObjectId failed for value "filter" (type string) at path "_id" for model "Task"
+2024-12-08T08:43:08.250Z [32minfo[39m: Server started successfully
+2024-12-08T08:43:18.813Z [32minfo[39m: Incoming request: GET /api/tasks/filter?status=TODO&priority=LOW&order=asc&limit=1&page=1
+2024-12-08T08:43:18.836Z [31merror[39m: Error fetching task by id: Failed to Get TaskCast to ObjectId failed for value "filter" (type string) at path "_id" for model "Task"
+2024-12-08T08:46:39.351Z [32minfo[39m: Server started successfully
+2024-12-08T08:47:19.103Z [32minfo[39m: Server started successfully
+2024-12-08T08:47:26.213Z [32minfo[39m: Server started successfully
+2024-12-08T08:48:25.216Z [32minfo[39m: Server started successfully
+2024-12-08T08:48:36.794Z [32minfo[39m: Server started successfully
+2024-12-08T08:48:59.308Z [32minfo[39m: Server started successfully
+2024-12-08T08:49:15.053Z [32minfo[39m: Server started successfully
+2024-12-08T08:49:18.101Z [32minfo[39m: Server started successfully
+2024-12-08T08:49:52.653Z [32minfo[39m: Server started successfully
+2024-12-08T08:50:26.264Z [32minfo[39m: Incoming request: GET /api/tasks/filter?status=TODO&priority=LOW&order=asc&limit=1&page=1
+2024-12-08T08:50:26.290Z [31merror[39m: Error fetching task by id: Failed to Get TaskCast to ObjectId failed for value "filter" (type string) at path "_id" for model "Task"
+2024-12-08T08:57:02.799Z [32minfo[39m: Incoming request: GET /api/tasks?status=TODO&priority=LOW&sort=createdAt&order=asc&limit=10&page=1%0A
+2024-12-08T08:57:02.901Z [32minfo[39m: All tasks fetched
+2024-12-08T08:57:54.453Z [32minfo[39m: Incoming request: GET /api/tasks?status=TODO&priority=LOW%0A
+2024-12-08T08:57:54.653Z [32minfo[39m: All tasks fetched
+2024-12-08T09:00:59.962Z [32minfo[39m: Incoming request: GET /api/tasks?active%0A
+2024-12-08T09:01:00.223Z [32minfo[39m: All tasks fetched
+2024-12-08T09:01:15.031Z [32minfo[39m: Incoming request: GET /api/tasks/active%0A
+2024-12-08T09:01:15.036Z [31merror[39m: Error fetching task by id: Failed to Get TaskCast to ObjectId failed for value "active\n" (type string) at path "_id" for model "Task"
+2024-12-08T09:04:27.712Z [32minfo[39m: Server started successfully
+2024-12-08T09:06:57.740Z [32minfo[39m: Server started successfully
+2024-12-08T09:07:01.265Z [32minfo[39m: Server started successfully
+2024-12-08T09:07:05.172Z [32minfo[39m: Server started successfully
+2024-12-08T09:07:37.366Z [32minfo[39m: Server started successfully
+2024-12-08T09:07:47.433Z [32minfo[39m: Server started successfully
+2024-12-08T09:07:53.023Z [32minfo[39m: Server started successfully
+2024-12-08T09:09:18.979Z [32minfo[39m: Server started successfully
+2024-12-08T09:09:23.868Z [32minfo[39m: Server started successfully
+2024-12-08T09:09:27.277Z [32minfo[39m: Server started successfully
+2024-12-08T09:09:34.414Z [32minfo[39m: Server started successfully
+2024-12-08T09:09:38.841Z [32minfo[39m: Incoming request: GET /api-docs/
+2024-12-08T09:09:38.897Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui.css
+2024-12-08T09:09:38.901Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-bundle.js
+2024-12-08T09:09:38.902Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-standalone-preset.js
+2024-12-08T09:09:38.906Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-init.js
+2024-12-08T09:09:39.239Z [32minfo[39m: Incoming request: GET /api-docs/favicon-32x32.png
+2024-12-08T09:09:46.476Z [32minfo[39m: Incoming request: GET /api/getTasks
+2024-12-08T09:10:10.243Z [32minfo[39m: Incoming request: GET /api/getTasks
+2024-12-08T09:10:10.374Z [32minfo[39m: Active tasks fetched
+2024-12-08T09:11:09.504Z [32minfo[39m: Server started successfully
+2024-12-08T09:11:21.347Z [32minfo[39m: Server started successfully
+2024-12-08T09:11:38.002Z [32minfo[39m: Server started successfully
+2024-12-08T09:12:06.725Z [32minfo[39m: Server started successfully
+2024-12-08T09:12:19.635Z [32minfo[39m: Incoming request: GET /api-docs/
+2024-12-08T09:12:19.683Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui.css
+2024-12-08T09:12:19.686Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-bundle.js
+2024-12-08T09:12:19.691Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-standalone-preset.js
+2024-12-08T09:12:19.693Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-init.js
+2024-12-08T09:12:20.419Z [32minfo[39m: Incoming request: GET /api-docs/favicon-32x32.png
+2024-12-08T09:13:07.279Z [32minfo[39m: Incoming request: GET /api/filteredTasks?priority=HIGH
+2024-12-08T09:13:07.374Z [32minfo[39m: Filtered Task found
+2024-12-08T09:13:47.870Z [32minfo[39m: Incoming request: POST /api/logout
+2024-12-08T09:15:08.550Z [32minfo[39m: Incoming request: GET /api-docs/
+2024-12-08T09:15:08.607Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui.css
+2024-12-08T09:15:08.609Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-bundle.js
+2024-12-08T09:15:08.610Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-standalone-preset.js
+2024-12-08T09:15:08.616Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-init.js
+2024-12-08T09:15:08.913Z [32minfo[39m: Incoming request: GET /api-docs/favicon-32x32.png
+2024-12-08T09:17:16.322Z [32minfo[39m: Incoming request: GET /api-docs/
+2024-12-08T09:17:16.392Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui.css
+2024-12-08T09:17:16.394Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-bundle.js
+2024-12-08T09:17:16.395Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-standalone-preset.js
+2024-12-08T09:17:16.399Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-init.js
+2024-12-08T09:17:16.597Z [32minfo[39m: Incoming request: GET /api-docs/favicon-32x32.png
+2024-12-08T09:18:28.856Z [32minfo[39m: Server started successfully
+2024-12-08T09:18:30.616Z [32minfo[39m: Incoming request: GET /api-docs/
+2024-12-08T09:18:30.664Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui.css
+2024-12-08T09:18:30.666Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-bundle.js
+2024-12-08T09:18:30.670Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-standalone-preset.js
+2024-12-08T09:18:30.672Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-init.js
+2024-12-08T09:18:30.835Z [32minfo[39m: Incoming request: GET /api-docs/favicon-32x32.png
+2024-12-08T10:45:19.106Z [32minfo[39m: Server started successfully
+2024-12-08T10:47:05.714Z [32minfo[39m: Incoming request: POST /api/register%0A
+2024-12-08T10:48:26.842Z [32minfo[39m: Incoming request: POST /api/register%0A
+2024-12-08T10:48:35.803Z [32minfo[39m: Incoming request: POST /api/register%0A
+2024-12-08T10:53:07.447Z [32minfo[39m: Incoming request: POST /api/register%0A
+2024-12-08T10:53:57.262Z [32minfo[39m: Incoming request: POST /api/register
+2024-12-08T10:55:11.796Z [32minfo[39m: Incoming request: POST /api/login
+2024-12-08T10:57:28.055Z [32minfo[39m: Incoming request: GET /api/dashboard
+2024-12-08T10:57:47.305Z [32minfo[39m: Incoming request: GET /api/tasks
+2024-12-08T10:57:47.505Z [32minfo[39m: All tasks fetched
+2024-12-08T10:58:41.972Z [32minfo[39m: Incoming request: GET /api/tasks/67555984103643fa28746610
+2024-12-08T10:58:42.050Z [32minfo[39m: Task found with id: 67555984103643fa28746610
+2024-12-08T10:59:07.991Z [32minfo[39m: Incoming request: GET /api/getTasks
+2024-12-08T10:59:08.087Z [32minfo[39m: Active tasks fetched
+2024-12-08T11:01:18.740Z [32minfo[39m: Incoming request: GET /api/filteredTasks?priority=HIGH
+2024-12-08T11:01:19.596Z [32minfo[39m: Filtered Task found
+2024-12-08T11:02:52.701Z [32minfo[39m: Incoming request: POST /api/tasks
+2024-12-08T11:02:52.844Z [32minfo[39m: Task created successfully: 67557cdce4907245f1a5708b
+2024-12-08T11:05:42.511Z [32minfo[39m: Incoming request: PUT /api/tasks/67555976103643fa2874660e
+2024-12-08T11:05:42.724Z [32minfo[39m: Task updated with id: 67555976103643fa2874660e
+2024-12-08T11:06:48.285Z [32minfo[39m: Incoming request: PATCH /api/tasks/67555954103643fa2874660c/soft-delete
+2024-12-08T11:06:48.530Z [32minfo[39m: Task soft deleted with id: 67555954103643fa2874660c
+2024-12-08T11:08:18.219Z [32minfo[39m: Incoming request: DELETE /api/tasks/67555954103643fa2874660c
+2024-12-08T11:08:18.390Z [32minfo[39m: Task deleted with id: 67555954103643fa2874660c
+2024-12-08T11:08:57.986Z [32minfo[39m: Incoming request: POST /api/logout
+2024-12-08T11:09:30.688Z [32minfo[39m: Server started successfully
+2024-12-08T11:44:11.437Z [32minfo[39m: Server started successfully
+2024-12-08T11:44:33.697Z [32minfo[39m: Incoming request: GET /api-docs
+2024-12-08T11:44:33.716Z [32minfo[39m: Incoming request: GET /api-docs/
+2024-12-08T11:44:33.797Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui.css
+2024-12-08T11:44:33.809Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-bundle.js
+2024-12-08T11:44:33.812Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-standalone-preset.js
+2024-12-08T11:44:33.814Z [32minfo[39m: Incoming request: GET /api-docs/swagger-ui-init.js

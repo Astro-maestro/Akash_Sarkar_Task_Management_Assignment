@@ -1,0 +1,260 @@
+userSchema: 
+
+const mongoose = require("mongoose");
+
+const userSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  role: {
+    type: String,
+    enum: ["Admin", "Manager", "Employee"],
+    default: "Employee",
+  },
+  image: {
+    type: String,
+    default: "https://www.jotform.com/blog/wp-content/uploads/2022/12/how-to-add-link-to-google-form-1280x500.jpg",
+  },
+  isAdmin: { type: Boolean, default: false },
+  isVerified: { type: Boolean, default: false },
+  createdAt: { type: Date, default: Date.now },
+});
+
+// Create and export the User model
+const User = mongoose.model("User", userSchema);
+module.exports = User;
+
+dataset for userschema:
+
+const users = [
+      {
+        name: 'Alice Johnson',
+        email: 'alice.johnson@example.com',
+        password: 'hashedpassword123',  // In a real app, hash the password
+        role: 'Admin',
+        image: 'https://www.example.com/images/alice.jpg',
+        isAdmin: true,
+        isVerified: true
+      },
+      {
+        name: 'Bob Smith',
+        email: 'bob.smith@example.com',
+        password: 'hashedpassword456',
+        role: 'Manager',
+        image: 'https://www.example.com/images/bob.jpg',
+        isAdmin: false,
+        isVerified: true
+      },
+      {
+        name: 'Charlie Brown',
+        email: 'charlie.brown@example.com',
+        password: 'hashedpassword789',
+        role: 'Employee',
+        image: 'https://www.example.com/images/charlie.jpg',
+        isAdmin: false,
+        isVerified: false
+      },
+      {
+        name: 'David Williams',
+        email: 'david.williams@example.com',
+        password: 'hashedpassword101',
+        role: 'Manager',
+        image: 'https://www.example.com/images/david.jpg',
+        isAdmin: false,
+        isVerified: true
+      },
+      {
+        name: 'Eva Green',
+        email: 'eva.green@example.com',
+        password: 'hashedpassword102',
+        role: 'Employee',
+        image: 'https://www.example.com/images/eva.jpg',
+        isAdmin: false,
+        isVerified: false
+      }
+    ];
+
+taskschema:
+
+const mongoose = require('mongoose');
+const mongoosePaginate = require('mongoose-paginate-v2');
+
+const taskSchema = new mongoose.Schema(
+  {
+    title: {
+      type: String,
+      required: true,
+      maxLength: 100,
+    },
+    description: {
+      type: String,
+      default: "", 
+    },
+    status: {
+      type: String,
+      enum: ['TODO', 'IN_PROGRESS', 'COMPLETED'],
+      default: 'TODO', 
+    },
+    priority: {
+      type: String,
+      enum: ['LOW', 'MEDIUM', 'HIGH'], 
+      required: true,
+    },
+    dueDate: {
+      type: Date, 
+    },
+    isDeleted: {
+      type: Boolean,
+      default: false,  // Indicates whether the task is soft deleted or not
+    },
+    deletedAt: {
+      type: Date,
+      default: null,  // Timestamp of when the task was soft deleted
+    },
+  },
+  {
+    timestamps: true, 
+  }
+);
+
+taskSchema.plugin(mongoosePaginate); // Add the plugin to the schema
+const Task = mongoose.model('Task', taskSchema);
+
+module.exports = Task;
+
+dataset for taskschema:
+
+
+const tasks = [
+      {
+        title: 'Finish documentation',
+        description: 'Complete the API documentation for the project.',
+        status: 'TODO',
+        priority: 'HIGH',
+        dueDate: new Date('2024-12-20'),
+        isDeleted: false,
+        deletedAt: null
+      },
+      {
+        title: 'Develop user authentication',
+        description: 'Implement user login, signup, and JWT authentication.',
+        status: 'IN_PROGRESS',
+        priority: 'MEDIUM',
+        dueDate: new Date('2024-12-15'),
+        isDeleted: false,
+        deletedAt: null
+      },
+      {
+        title: 'Fix bugs in payment gateway',
+        description: 'Resolve issues with payment gateway integration.',
+        status: 'TODO',
+        priority: 'HIGH',
+        dueDate: new Date('2024-12-10'),
+        isDeleted: false,
+        deletedAt: null
+      },
+      {
+        title: 'UI improvements for dashboard',
+        description: 'Enhance the user interface for the admin dashboard.',
+        status: 'IN_PROGRESS',
+        priority: 'LOW',
+        dueDate: new Date('2024-12-18'),
+        isDeleted: false,
+        deletedAt: null
+      },
+      {
+        title: 'Prepare release notes',
+        description: 'Write and format release notes for the upcoming deployment.',
+        status: 'COMPLETED',
+        priority: 'MEDIUM',
+        dueDate: new Date('2024-12-05'),
+        isDeleted: false,
+        deletedAt: null
+      },
+      {
+        title: 'Cleanup old tasks',
+        description: 'Delete outdated tasks from the database.',
+        status: 'COMPLETED',
+        priority: 'LOW',
+        dueDate: new Date('2024-12-01'),
+        isDeleted: true,
+        deletedAt: new Date('2024-12-01')
+      },
+      {
+        title: 'Code review for new feature',
+        description: 'Review and approve the code for the new feature.',
+        status: 'TODO',
+        priority: 'MEDIUM',
+        dueDate: new Date('2024-12-25'),
+        isDeleted: false,
+        deletedAt: null
+      }
+    ];
+
+
+explanation of design decision:
+
+
+Here’s a brief explanation of the design decisions for the Task schema and dataset:
+
+1. Schema Structure:
+Field Choices: The Task schema includes the following key fields:
+title: Represents the core identity of the task, and its required: true constraint ensures every task has a name.
+description: Provides additional details about the task, making it optional with a default value of an empty string. This allows for flexibility in data entry without forcing unnecessary details.
+status: Categorized as TODO, IN_PROGRESS, or COMPLETED to track task progression. This enum helps standardize the states for tasks.
+priority: The priority field helps in task prioritization. The enum ensures valid values like LOW, MEDIUM, and HIGH.
+dueDate: A Date field ensures the due date is stored in a standardized format for tasks requiring time-based management.
+isDeleted: A Boolean flag to mark tasks as soft deleted. This field facilitates easy recovery or restoration of deleted tasks.
+deletedAt: Tied to isDeleted, it records when the task was soft deleted, ensuring transparent data handling.
+Why This Structure?:
+
+Flexibility: The schema allows for the handling of different task states, priorities, and temporal details, accommodating a wide range of task management use cases.
+Soft Deletion: Implementing isDeleted and deletedAt supports soft deletion, which ensures that tasks aren't permanently removed from the database. This is important for audits and data recovery.
+2. Use of mongoose-paginate-v2:
+Pagination: By integrating the mongoose-paginate-v2 plugin, we ensure that tasks can be efficiently paginated when queried. This is especially beneficial in scenarios where the number of tasks can grow significantly, preventing performance degradation.
+Scalability: Pagination supports scalability by limiting the number of results returned per query, enhancing performance when dealing with large datasets.
+3. Data Population:
+Sample Data: The dataset includes tasks with various statuses (TODO, IN_PROGRESS, COMPLETED) and priorities (LOW, MEDIUM, HIGH) to simulate realistic scenarios in a task management system.
+Diversity: The dataset includes tasks with different levels of progress and priorities, including completed tasks and soft-deleted tasks, making the data set useful for testing filtering, sorting, and pagination functionality.
+4. Timestamps:
+Automatic Timestamps: The timestamps: true option automatically adds createdAt and updatedAt fields to each document. This is useful for tracking task history and detecting when a task was last modified.
+By implementing these decisions, the design ensures flexibility, scalability, and efficiency in managing tasks in a MongoDB-based application. It also prepares the schema for complex querying and data handling while maintaining simplicity and ease of use.
+
+Here’s an explanation of the design decisions made for the User schema:
+
+1. Name Field (name)
+Decision: This field is a required String type.
+Reason: A user’s name is typically essential for identification and personalization in an application. Making it a required field ensures that every user record contains a name.
+2. Email Field (email)
+Decision: This field is required, unique, and is a String type.
+Reason: Email is often used for user identification and authentication. The uniqueness constraint prevents duplicate email registrations. Additionally, it can serve as a key field for communication (e.g., email verification or password reset). Making it required ensures that users cannot sign up without providing an email.
+3. Password Field (password)
+Decision: The password is a required field of type String.
+Reason: The password is necessary for user authentication and is critical for security. This field is usually hashed before storage, ensuring that plaintext passwords are not stored in the database.
+4. Role Field (role)
+Decision: This field is an enum with three possible values: Admin, Manager, and Employee. Its default value is Employee.
+Reason: The role field facilitates role-based access control (RBAC), allowing the application to determine which actions a user can perform based on their role. For instance, Admins might have full access, while Employees might have limited access. The default value is set to Employee to ensure that users are assigned the most basic role unless specified otherwise.
+5. Image Field (image)
+Decision: The image field is a String that holds a URL to a user’s profile image. It defaults to a placeholder image if not provided.
+Reason: A user profile image is a common feature in modern applications for user personalization. The default image ensures that users who haven’t uploaded an image still have a profile picture, providing a consistent user experience.
+6. Admin Flag (isAdmin)
+Decision: This is a Boolean field that defaults to false.
+Reason: The isAdmin field is used to provide a quick check to see if a user is an administrator. This could be useful for quick access checks in the application logic (e.g., for administrative dashboards). The default value ensures that most users are not marked as admins.
+7. Verification Flag (isVerified)
+Decision: This is a Boolean field that defaults to false.
+Reason: The isVerified flag tracks whether a user has completed the email verification process. It’s an important step in ensuring that users are legitimate and helps in securing accounts (preventing spam or fake accounts). The default value is set to false, meaning users must be verified before accessing certain features.
+8. CreatedAt Field (createdAt)
+Decision: This field is of type Date and automatically set to the current date and time when a new document is created.
+Reason: The createdAt field allows for easy tracking of when the user account was created. This could be useful for audit purposes, user activity analysis, or simply sorting users by creation date.
+9. Data Validation
+Decision: Several fields have validation constraints (e.g., email being unique, role using an enum).
+Reason: Data validation helps in maintaining data integrity and ensuring that only valid data is stored in the database. Unique constraints prevent duplication, and enums ensure that the value of a field is restricted to a predefined set of valid options.
+10. Timestamps (Auto-generated createdAt)
+Decision: The schema uses the built-in timestamps option.
+Reason: The timestamps option automatically generates createdAt and updatedAt fields for every document, simplifying the tracking of when a document was created or last updated. This is a useful feature for managing and auditing user records over time.
+Summary of Design Choices:
+Security and Validation: The email field is marked as unique, ensuring no duplicates. The password field is required and hashed, aligning with best practices for secure data handling.
+Role-based Access Control (RBAC): The role and isAdmin fields help the application implement different levels of access and functionality for different user roles.
+User Experience: Default values (such as for image and role) and the createdAt field ensure a consistent and enriched user experience.
+This schema design prioritizes user authentication, access control, and data integrity, aligning with common practices for modern web applications.
+

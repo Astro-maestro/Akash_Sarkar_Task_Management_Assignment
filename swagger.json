@@ -1,0 +1,412 @@
+{
+  "swaggerDefinition": {
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Task Management API",
+      "version": "1.0.0",
+      "description": "A simple task management API using Node.js, Express, and MongoDB. Created by Akash Sarkar",
+      "contact": {
+          "name": "Akash Sarkar"
+        }
+    },
+    "servers": [
+      {
+        "url": "http://localhost:5000",
+        "description": "Local server"
+      }
+    ],
+    "components": {
+      "securitySchemes": {
+        "xAccessToken": {
+          "type": "apiKey",
+          "in": "header",
+          "name": "x-access-token"
+        }
+      }
+    },
+    "paths": {
+      "/api/tasks": {
+        "post": {
+          "tags": ["Tasks"],
+          "summary": "Create a new task",
+          "description": "Create a new task by providing the necessary details.",
+          "security": [
+            {
+              "xAccessToken": []
+            }
+          ],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Task created successfully"
+            },
+            "400": {
+              "description": "Invalid input data"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        },
+        "get": {
+          "tags": ["Tasks"],
+          "summary": "Get all tasks",
+          "description": "Fetch all tasks including those that are deleted.",
+          "security": [
+            {
+              "xAccessToken": []
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Tasks fetched successfully"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        }
+      },
+      "/api/tasks/{id}": {
+        "get": {
+          "tags": ["Tasks"],
+          "summary": "Get a task by ID",
+          "description": "Fetch a task using its unique ID.",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "description": "ID of the task to fetch"
+            }
+          ],
+          "security": [
+            {
+              "xAccessToken": []
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Task found successfully"
+            },
+            "404": {
+              "description": "Task not found"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        },
+        "put": {
+          "tags": ["Tasks"],
+          "summary": "Update a task by ID",
+          "description": "Update an existing task by providing the new data.",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "description": "ID of the task to update"
+            }
+          ],
+          "security": [
+            {
+              "xAccessToken": []
+            }
+          ],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Task updated successfully"
+            },
+            "404": {
+              "description": "Task not found"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        },
+        "delete": {
+          "tags": ["Tasks"],
+          "summary": "Delete a task by ID",
+          "description": "Permanently delete a task using its ID.",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "description": "ID of the task to delete"
+            }
+          ],
+          "security": [
+            {
+              "xAccessToken": []
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "Task deleted successfully (No Content)"
+            },
+            "404": {
+              "description": "Task not found"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        }
+      },
+      "/api/tasks/{id}/soft-delete": {
+        "patch": {
+          "tags": ["Tasks"],
+          "summary": "Soft delete a task by ID",
+          "description": "Mark a task as deleted without permanently removing it.",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "description": "ID of the task to soft delete"
+            }
+          ],
+          "security": [
+            {
+              "xAccessToken": []
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "Task soft deleted successfully (No Content)"
+            },
+            "404": {
+              "description": "Task not found"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        }
+      },
+      "/api/filteredTasks": {
+        "get": {
+          "tags": ["Tasks"],
+          "summary": "Get filtered tasks",
+          "description": "Fetch tasks based on filter criteria (e.g., status, priority).",
+          "parameters": [
+            {
+              "name": "status",
+              "in": "query",
+              "description": "Filter tasks by status (TODO, IN_PROGRESS, COMPLETED)"
+            },
+            {
+              "name": "priority",
+              "in": "query",
+              "description": "Filter tasks by priority (LOW, MEDIUM, HIGH)"
+            },
+            {
+              "name": "sort",
+              "in": "query",
+              "description": "Sort tasks by a field (default is createdAt)"
+            },
+            {
+              "name": "order",
+              "in": "query",
+              "description": "Sort order (asc or desc)"
+            },
+            {
+              "name": "limit",
+              "in": "query",
+              "description": "Number of tasks per page (default is 10)"
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "description": "Page number for pagination (default is 1)"
+            }
+          ],
+          "security": [
+            {
+              "xAccessToken": []
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Filtered tasks retrieved successfully"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        }
+      },
+      "/api/getTasks": {
+        "get": {
+          "tags": ["Tasks"],
+          "summary": "Get tasks that are not soft-deleted",
+          "description": "Fetch tasks that are not soft-deleted.",
+          "security": [
+            {
+              "xAccessToken": []
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Active tasks retrieved successfully"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        }
+      },
+
+      "/api/register": {
+        "post": {
+          "tags": ["Auth"],
+          "summary": "Register a new user",
+          "description": "Create a new user by providing the necessary details.",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "User registered successfully"
+            },
+            "400": {
+              "description": "Invalid input data"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        }
+      },
+      "/api/login": {
+        "post": {
+          "tags": ["Auth"],
+          "summary": "User login",
+          "description": "Login user with email and password",
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "email": {
+                      "type": "string"
+                    },
+                    "password": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "User logged in successfully"
+            },
+            "400": {
+              "description": "Missing email or password"
+            },
+            "401": {
+              "description": "Invalid credentials"
+            }
+          }
+        }
+      },
+      "/api/dashboard": {
+        "get": {
+          "tags": ["Auth"],
+          "summary": "Get user dashboard",
+          "description": "Fetch user data for the dashboard",
+          "security": [
+            {
+              "xAccessToken": []
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "User dashboard information"
+            },
+            "401": {
+              "description": "Unauthorized access (invalid token or missing token)"
+            },
+            "500": {
+              "description": "Error fetching user data"
+            }
+          }
+        }
+      },
+      "/api/logout": {
+        "post": {
+          "tags": ["Auth"],
+          "summary": "Logout user",
+          "description": "Logout the user by deleting their session token",
+          "security": [
+            {
+              "xAccessToken": []
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "User logged out successfully"
+            },
+            "401": {
+              "description": "Unauthorized access (invalid token or missing token)"
+            },
+            "500": {
+              "description": "Error during logout"
+            }
+          }
+        }
+      }
+    },
+    "tags": [
+      {
+        "name": "Auth",
+        "description": "Operations related to users, Auth API"
+      },
+      {
+        "name": "Tasks",
+        "description": "Operations related to tasks, Task API"
+      }
+    ],
+
+    "schemes": ["http"]
+  },
+  "apis": [
+    "app.js",
+    "./app/router/authRoutes/api/authRoutes.js",
+    "./app/router/taskRoutes/api/taskRoutes.js",
+    "./app/router/index.js"
+  ]
+}
